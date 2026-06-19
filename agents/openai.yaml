@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auto Update"
+  short_description: "自动检查并安装最新的 curated skills"
+  default_prompt: "Use $auto-update to check for and install newly available curated skills from the openai/skills repository."
