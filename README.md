@@ -50,3 +50,58 @@ schtasks /create /tn "Codex Auto Update Skills" /xml auto-update-task.xml /f
 - 使用 GitHub API 获取 curated 列表
 - 复用 skill-installer 的安装脚本进行安装
 - 幂等设计：已安装的技能不会重复安装
+---
+
+# 🎯 Claude Code Skills 扩展包
+
+除了原有的 Codex auto-update 功能外，本仓库还包含了适用于 **Claude Code** 的自定义技能。
+
+## 目录结构
+
+```
+claude-skills/
+├── auto-update/          # Claude Code 版自动更新器
+│   ├── SKILL.md          #  技能定义
+│   ├── plugin.json       #  插件清单
+│   └── scripts/          #  更新脚本
+├── music-creator/        # AI 辅助音乐创作助手
+│   └── SKILL.md
+└── zh-code-review/       # 中文代码审查助手
+    └── SKILL.md
+```
+
+## Claude Code 技能说明
+
+### 🔄 claude-auto-update
+Claude Code 版自动技能更新器。自动检查并安装最新的热门插件和 skills。
+
+```bash
+# 手动触发更新
+bash claude-skills/auto-update/scripts/claude-update.sh
+```
+
+### 🎵 music-creator
+AI 辅助音乐创作助手。用 AI 生成灵感，通过**实质性的手工改编**（改和弦、旋律、歌词、编曲）创作真正的原创作品。
+
+> ⚠️ **原则声明**：本技能坚持"AI 辅助人工创作"，不鼓励将 AI 输出直接冒充原创。
+
+### 📝 zh-code-review
+面向国内开发团队的中文代码审查助手。支持 Vue/React/小程序/Spring Boot/Flask 等主流技术栈，审查报告全部使用中文输出。
+
+## 安装 Claude Code 技能
+
+```bash
+# 方法1：复制到 Claude Code 技能目录
+cp -r claude-skills/* ~/.claude/skills/
+
+# 方法2：通过 CLI 安装具体技能
+claude plugin install claude-auto-update@wenjieshuo001-lang
+```
+
+## 贡献
+
+欢迎提交 PR 增加更多实用的 Claude Code 技能！请确保：
+
+1. 遵循 `SKILL.md` 标准格式
+2. 包含完整的 metadata 头部
+3. 中英文双语文档更佳
