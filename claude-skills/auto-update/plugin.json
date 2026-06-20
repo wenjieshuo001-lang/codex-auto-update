@@ -1,0 +1,17 @@
+{
+  "name": "claude-auto-update",
+  "description": "Claude Code 自动技能更新器 — 保持你的 Claude Code 始终处于最新状态",
+  "author": {
+    "name": "wenjieshuo001-lang",
+    "url": "https://github.com/wenjieshuo001-lang"
+  },
+  "version": "1.0.0",
+  "category": "utilities",
+  "skills": ["./"],
+  "interface": {
+    "displayName": "Claude Auto Update",
+    "shortDescription": "自动检查并安装最新的热门 skills 和 plugins",
+    "longDescription": "基于 codex-auto-update 的思路，为 Claude Code 定制。自动检查市场索引中的新插件和技能，一键安装更新。",
+    "category": "utilities"
+  }
+}
